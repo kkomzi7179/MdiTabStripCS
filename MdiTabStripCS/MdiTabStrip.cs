@@ -183,12 +183,12 @@ namespace MdiTabStripCS {
 
 		public delegate void MdiNewTabClickedEventHandler(object sender, EventArgs e);
 
-		#endregion
+        #endregion
 
 
-		// 2010-12-10 16:45:09 NOTE By Jaeyong Park : 오른쪽 마우스 클릭시 상황메뉴 추가
-		#region 
-		ContextMenuStrip CTXRightMenu = new ContextMenuStrip();
+        // 2010-12-10 16:45:09 NOTE By Jaeyong Park : Add context menu when right mouse click
+        #region 
+        ContextMenuStrip CTXRightMenu = new ContextMenuStrip();
 		ToolStripMenuItem CTXRightMenuCloseThis = new ToolStripMenuItem();
 		ToolStripMenuItem CTXRightMenuCloseAnother = new ToolStripMenuItem();
 		ToolStripMenuItem CTXRightMenuCloseAll = new ToolStripMenuItem();
@@ -231,7 +231,7 @@ namespace MdiTabStripCS {
 			this.m_rightScrollTab.Size = new Size(20, this.DisplayRectangle.Height);
 			this.m_newTab.Size = new Size(25, this.DisplayRectangle.Height);
 
-			// 2010-12-10 16:45:21 NOTE By Jaeyong Park : 메뉴 설정
+			// 2010-12-10 16:45:21 NOTE By Jaeyong Park : context menu setting
 			#region 
 			CTXRightMenuCloseThis.Text = "Close tab(&C)";
 			CTXRightMenuCloseThis.Click += this.CTXRightMenuCloseThis_Click;
@@ -245,7 +245,7 @@ namespace MdiTabStripCS {
 			#endregion 
 		}
 
-		// NOTE By Jaeyong Park : 현재 탭, 나머지 탭 모두 닫기 이벤트
+		// NOTE By Jaeyong Park : context menu event
 		#region 
 
 		void CTXRightMenuCloseThis_Click(object sender, EventArgs e) {
@@ -1631,9 +1631,9 @@ namespace MdiTabStripCS {
 			if(!DesignMode) {
 				bool multipleTabs = this.Tabs.Count > 1;
 
-				// 2019-11-01 TODO By Jaeyong Park : 탭 이동 버그로 인해 임시로 안보이게 - 원복
-				#region Before
-				bool hiddenTabs = this.Tabs.VisibleCount < this.Tabs.Count;
+                // 2019-11-01 TODO By Jaeyong Park : Temporarily invisible due to tab shift bug - Revert
+                #region Before
+                bool hiddenTabs = this.Tabs.VisibleCount < this.Tabs.Count;
 				this.LeftScrollTab.Visible = hiddenTabs;
 				this.RightScrollTab.Visible = hiddenTabs;
 				#endregion
@@ -1691,9 +1691,10 @@ namespace MdiTabStripCS {
 			if(this.MdiTabClicked != null) {
 				this.MdiTabClicked(this, e);
 			}
-			// 2010-12-10 16:42:52 NOTE By Jaeyong Park : 마우스 휠 클릭시 해당 탭 종료, 마우스 오른쪽 버튼 클릭시 상황메뉴 표시
-			#region
-			switch (e.MouseEvent.Button) {
+            
+            // 2010-12-10 16:42:52 NOTE By Jaeyong Park : add mouse event : wheel-click to close current tab & right-click to display the context menu
+            #region
+            switch (e.MouseEvent.Button) {
 				case MouseButtons.Middle:
 					e.ClickedTab.Form.Close();
 					break;

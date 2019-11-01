@@ -366,19 +366,20 @@ namespace MdiTabStripCS {
 			if(!this.IsActive) {
 				iconRectangle.Offset(0, 2);
 			}
-			// 2019-11-01 TODO By Jaeyong Park : 활성화된 폼은 활성화 폼 아이콘으로 표시 - 원복
-//			if(IsActive) {
-//				Icon _Icon = global::MdiTabStripCS.Properties.Resources.CurrentTab;
-//				using(Bitmap bmp = new Bitmap(_Icon.Width
-//					, _Icon.Height
-//					, PixelFormat.Format32bppArgb)) {
-//					using(Graphics bg = Graphics.FromImage(bmp)) {
-//						bg.DrawIcon(_Icon, 0, 0);
-//					}
-//					g.DrawImage(bmp, iconRectangle);
-//				}
-//			} else {
-				using(Bitmap bmp = new Bitmap(this.Form.Icon.Width, this.Form.Icon.Height, PixelFormat.Format32bppArgb)) {
+
+            // 2019-11-01 TODO By Jaeyong Park : Activated form is indicated by the active form icon - Revert
+            //			if(IsActive) {
+            //				Icon _Icon = global::MdiTabStripCS.Properties.Resources.CurrentTab;
+            //				using(Bitmap bmp = new Bitmap(_Icon.Width
+            //					, _Icon.Height
+            //					, PixelFormat.Format32bppArgb)) {
+            //					using(Graphics bg = Graphics.FromImage(bmp)) {
+            //						bg.DrawIcon(_Icon, 0, 0);
+            //					}
+            //					g.DrawImage(bmp, iconRectangle);
+            //				}
+            //			} else {
+            using (Bitmap bmp = new Bitmap(this.Form.Icon.Width, this.Form.Icon.Height, PixelFormat.Format32bppArgb)) {
 					using(Graphics bg = Graphics.FromImage(bmp)) {
 						bg.DrawIcon(this.Form.Icon, 0, 0);
 					}
