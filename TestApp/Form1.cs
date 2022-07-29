@@ -18,22 +18,29 @@ namespace TestApp
 			this.IsMdiContainer = true;
 			this.Width = 800;
 
-			this.toolStrip1.Items.Add(new ToolStripButton("Add new child") {
+			this.toolStrip1.Items.Add(new ToolStripButton("Add new child")
+			{
 				Name = "tsbNew"
 			});
-			
+
 			this.toolStrip1.ItemClicked += (s, e) => {
-				if (e.ClickedItem.Name.Equals("tsbNew")) {
+				if (e.ClickedItem.Name.Equals("tsbNew"))
+				{
 					Form frm = new Form();
-					frm.MdiParent = this;
+					frm.Controls.Add(new Button()
+					{
+						Text = "test" + this.MdiChildren.Length
+					});
 					frm.Text = "Child " + this.MdiChildren.Length;
+					frm.MdiParent = this;
 					frm.Show();
 				}
 			};
 
 			this.MdiChildActivate += (s, e) => {
 				var actMdiChild = this.ActiveMdiChild;
-				if (actMdiChild != null) {
+				if (actMdiChild != null)
+				{
 					this.Text = string.Format("Activated child : {0}", actMdiChild.Text);
 				}
 			};
