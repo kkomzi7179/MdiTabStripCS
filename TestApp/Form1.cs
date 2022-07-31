@@ -1,4 +1,6 @@
-﻿using System;
+﻿using RuntimeProperty;
+
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -22,6 +24,10 @@ namespace TestApp
 			{
 				Name = "tsbNew"
 			});
+			this.toolStrip1.Items.Add(new ToolStripButton("Runtime Property")
+			{
+				Name = "runTimeProperty"
+			});
 
 			this.toolStrip1.ItemClicked += (s, e) => {
 				if (e.ClickedItem.Name.Equals("tsbNew"))
@@ -29,11 +35,14 @@ namespace TestApp
 					Form frm = new Form();
 					frm.Controls.Add(new Button()
 					{
-						Text = "test" + this.MdiChildren.Length
+						Name = Text = "test" + this.MdiChildren.Length
 					});
-					frm.Text = "Child " + this.MdiChildren.Length;
+					frm.Name = frm.Text = "Child " + this.MdiChildren.Length;
 					frm.MdiParent = this;
 					frm.Show();
+				} else if (e.ClickedItem.Name.Equals("runTimeProperty"))
+				{
+					this.ShowProperty();
 				}
 			};
 
@@ -44,6 +53,17 @@ namespace TestApp
 					this.Text = string.Format("Activated child : {0}", actMdiChild.Text);
 				}
 			};
+		}
+
+		protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
+		{
+			if (keyData == (Keys.Control | Keys.Shift | Keys.P))
+			{
+				this.ShowProperty();
+				return true;
+			}
+
+			return base.ProcessCmdKey(ref msg, keyData);
 		}
 	}
 }

@@ -30,9 +30,6 @@
     <ImportWindowsDesktopTargets>true</ImportWindowsDesktopTargets>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="System.Design" />
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="MyDragTab.cur">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
