@@ -1,9 +1,21 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MdiTabStripCS", "MdiTabStripCS\MdiTabStripCS.csproj", "{5DC929FD-E59C-4357-9F1C-3AD9DA3BD255}"
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32630.192
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MdiTabStripCS", "MdiTabStripCS\MdiTabStripCS.csproj", "{5DC929FD-E59C-4357-9F1C-3AD9DA3BD255}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestApp", "TestApp\TestApp.csproj", "{285F4BA4-B80F-403D-9B74-721CD354D648}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestApp", "TestApp\TestApp.csproj", "{285F4BA4-B80F-403D-9B74-721CD354D648}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "솔루션 항목", "솔루션 항목", "{7F10A929-AA82-4144-AD99-DBA899A6F8F9}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+		ContextMenu new.png = ContextMenu new.png
+		ContextMenu.png = ContextMenu.png
+		README.md = README.md
+		Sample project new.png = Sample project new.png
+		Sample project.png = Sample project.png
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,5 +51,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {FD013428-1AE6-4B20-A829-D22B95400911}
 	EndGlobalSection
 EndGlobal
