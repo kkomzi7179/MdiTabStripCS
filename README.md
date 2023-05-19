@@ -10,14 +10,14 @@ modified block comment : By Jaeyong Park
 
 ### Screenshot
 
-<img src='https://github.com/cloudappbiz/MdiTabStripCS/blob/master/Sample%20project.png' />
+<img src='https://github.com/kkomzi7179/MdiTabStripCS/blob/master/Sample%20project.png' />
 
-<img src='https://github.com/cloudappbiz/MdiTabStripCS/blob/master/ContextMenu.png' />
+<img src='https://github.com/kkomzi7179/MdiTabStripCS/blob/master/ContextMenu.png' />
 
 ### Screenshot new
 
-<img src='https://github.com/cloudappbiz/MdiTabStripCS/blob/master/Sample%20project%20new.png' />
+<img src='https://github.com/kkomzi7179/MdiTabStripCS/blob/master/Sample%20project%20new.png' />
 
-<img src='https://github.com/cloudappbiz/MdiTabStripCS/blob/master/ContextMenu%20new.png' />
+<img src='https://github.com/kkomzi7179/MdiTabStripCS/blob/master/ContextMenu%20new.png' />
 
 test
