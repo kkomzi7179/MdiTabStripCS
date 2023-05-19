@@ -20,4 +20,4 @@ modified block comment : By Jaeyong Park
 
 <img src='https://github.com/kkomzi7179/MdiTabStripCS/blob/master/ContextMenu%20new.png' />
 
-test
+Add RuntimeProperty test
